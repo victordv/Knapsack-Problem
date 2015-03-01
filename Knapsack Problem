@@ -1,3 +1,9 @@
+/* Descripcion: Clase que realiza el problema de la mochila
+* Autor: Víctor del Valle del Apio
+* e-mail: victorvalleapio@gmail.com
+* Fecha: 03-07-2013
+*/
+
 #include <iostream>;
 #include <fstream>;
 #include <queue>
@@ -28,8 +34,7 @@ solucionPD mochila_pd(double P[], double V[], int n){
 			if (P[i-1] > j) 
 				mochila[i][j] = mochila[i-1][j];
 			else
-				mochila[i][j] = max(mochila[i-1][j], mochila[i-1][j-(int)P[i-1]] + V[i-1]);//Al ser el peso un double, hay que hacerle el casting
-		}
+				mochila[i][j] = max(mochila[i-1][j], mochila[i-1][j-(int)P[i-1]] + V[i-1]);//Al ser el peso un double, hay que hacerle el casting		}
 	}
 
 	sol.valor = mochila[n][M];
